@@ -119,3 +119,6 @@ The Meeting Notes Generator automatically creates structured meeting notes from 
 - **State Management**: Redux Toolkit
 - **Authentication**: JWT with bcrypt
 - **Deployment**: Vercel
+
+            
+# Thank You
