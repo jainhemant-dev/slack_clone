@@ -1,36 +1,127 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Slack Clone with AI-Powered Features
 
-## Getting Started
+A modern Slack clone built with Next.js, MongoDB, and Google's Gemini AI that enhances team communication with intelligent features.
 
-First, run the development server:
+## Live Deployed Link
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+[Slack Clone AI](https://slack-clone-self-psi.vercel.app/)
+
+## Setup Instructions
+
+### Prerequisites
+
+- Node.js (version 18.0.0 or higher)
+- MongoDB account (for database)
+- Google AI Studio account (for Gemini API key)
+
+### Environment Variables
+
+Create a `.env` file in the root directory with the following variables:
+
+refere `.env.sample` file
+```
+# MongoDB
+MONGODB_URI=your_mongodb_connection_string
+
+# Google Gemini AI
+NEXT_PUBLIC_GEMINI_API_KEY=your_gemini_api_key
+NEXT_PUBLIC_GEMINI_MODEL=gemini-pro
+
+# JWT for Authentication
+JWT_SECRET=your_jwt_secret
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Installation Steps
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+1. Clone the repository
+2. Install dependencies:
+   ```bash
+   npm install
+   # or
+   pnpm install
+   ```
+3. Run the development server:
+   ```bash
+   npm run dev
+   # or
+   pnpm dev
+   ```
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Building for Production
 
-## Learn More
+```bash
+npm run build
+npm start
+# or
+pnpm build
+pnpm start
+```
 
-To learn more about Next.js, take a look at the following resources:
+## AI Features Overview
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 1. Org Brain Plugin
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The Org Brain gives AI access to all public channels and pinned documents, allowing users to query organizational knowledge.
 
-## Deploy on Vercel
+**Implementation Details:**
+- Leverages Gemini AI to process and understand organizational content
+- Indexes messages from public channels and pinned documents
+- Provides intelligent responses to queries like "What's the latest on Project Atlas?"
+- Synthesizes information across multiple channels and documents
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+**Usage:**
+- Type queries in the AI assistant interface
+- Receive comprehensive summaries drawn from across the workspace
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 2. Auto-Reply Composer
+
+The Auto-Reply Composer helps users respond quickly to messages with AI-generated suggestions.
+
+**Implementation Details:**
+- Analyzes entire message thread context
+- Generates contextually relevant replies
+- Considers conversation history for coherent responses
+
+**Usage:**
+- Click "Suggest Reply" on any message thread
+- AI proposes a response based on the conversation context
+- Edit the suggestion as needed before sending
+
+### 3. Tone & Impact Meter
+
+The Tone & Impact Meter analyzes message sentiment and provides feedback on communication style.
+
+**Implementation Details:**
+- Uses Gemini AI to evaluate message tone and impact
+- Provides feedback on whether messages sound aggressive, weak, confusing, etc.
+- Assigns impact rating (high/medium/low) to help users improve communication
+
+**Usage:**
+- Type a message in any channel
+- View real-time feedback on tone and impact
+- Adjust your message based on AI suggestions before sending
+
+### 4. Meeting Notes Generator
+
+The Meeting Notes Generator automatically creates structured meeting notes from conversation threads.
+
+**Implementation Details:**
+- Analyzes conversation transcripts
+- Extracts key topics, decisions, and action items
+- Generates formatted meeting notes with assignees and due dates
+
+**Usage:**
+- Select a thread or channel
+- Click "Generate Meeting Notes"
+- Review and share the automatically generated notes
+
+## Tech Stack
+
+- **Frontend**: Next.js, React 19, TailwindCSS, Radix UI
+- **Backend**: Next.js API routes
+- **Database**: MongoDB with Mongoose
+- **AI**: Google Generative AI (Gemini Pro)
+- **State Management**: Redux Toolkit
+- **Authentication**: JWT with bcrypt
+- **Deployment**: Vercel
