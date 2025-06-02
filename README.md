@@ -36,25 +36,19 @@ JWT_SECRET=your_jwt_secret
 1. Clone the repository
 2. Install dependencies:
    ```bash
-   npm install
-   # or
+   npm install -g pnpm (if not exist)
    pnpm install
    ```
 3. Run the development server:
    ```bash
-   npm run dev
-   # or
-   pnpm dev
+   pnpm run dev
    ```
 4. Open [http://localhost:3000](http://localhost:3000) in your browser
 
 ### Building for Production
 
 ```bash
-npm run build
-npm start
-# or
-pnpm build
+pnpm run build
 pnpm start
 ```
 
@@ -66,7 +60,7 @@ The Org Brain gives AI access to all public channels and pinned documents, allow
 
 **Implementation Details:**
 - Leverages Gemini AI to process and understand organizational content
-- Indexes messages from public channels and pinned documents
+- Indexes messages from public channels.
 - Provides intelligent responses to queries like "What's the latest on Project Atlas?"
 - Synthesizes information across multiple channels and documents
 
@@ -121,7 +115,7 @@ The Meeting Notes Generator automatically creates structured meeting notes from 
 - **Frontend**: Next.js, React 19, TailwindCSS, Radix UI
 - **Backend**: Next.js API routes
 - **Database**: MongoDB with Mongoose
-- **AI**: Google Generative AI (Gemini Pro)
+- **AI**: Google Generative AI (Gemini-1.5 flash)
 - **State Management**: Redux Toolkit
 - **Authentication**: JWT with bcrypt
 - **Deployment**: Vercel
